@@ -14,17 +14,17 @@ app.set('port', process.env.PORT || 3000);
 app.use(express.static(__dirname + '/public'));
 
 let listOfWorks = [
-  {title: 'My Very Special Work', link: 'https://zombo.com',},
-  {title: 'My Second Work', link: 'https://zombo.com',},
-  {title: 'My Third Work', link: 'https://zombo.com',},
-  {title: 'My Fourth Work', link: 'https://zombo.com',},
-  {title: 'My Fifth Work', link: 'https://zombo.com',},
-] //image: '/img/panda.jpg'
+  {title: 'Pokey.Dex', link: 'https://zombo.com', description: 'A website for all your pokemon needs.', image: ''},
+  {title: 'Web Production 2', link: 'https://zombo.com', description: 'A website for all your pokemon needs.', image: ''},
+  {title: 'Web Production 1', link: 'https://zombo.com', description: 'A website for all your pokemon needs.', image: ''},
+  {title: 'Software and Design Analysis 3', link: 'https://zombo.com', description: 'A website for all your pokemon needs.', image: ''},
+] 
+//image: '/img/panda.jpg'
 // if you want to add your work to a partial
 // middleware to add list data to context
 app.use(function(req, res, next){
 	if(!res.locals.partials) res.locals.partials = {};
-  // 	res.locals.partials.listOfWorks = listOfWorks;
+    res.locals.partials.listOfWorks = listOfWorks;
  	next();
 });
 

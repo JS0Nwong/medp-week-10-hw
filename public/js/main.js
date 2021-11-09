@@ -1,44 +1,44 @@
-const intro = document.querySelector(".intro");
-const logo = document.querySelector(".logo-header");
-const logoSpan = document.querySelectorAll(".logo");
-const logoReverse = document.querySelectorAll(".logo-reverse");
+// const intro = document.querySelector(".intro");
+// const logo = document.querySelector(".logo-header");
+// const logoSpan = document.querySelectorAll(".logo");
+// const logoReverse = document.querySelectorAll(".logo-reverse");
 
-window.addEventListener("DOMContentLoaded", ()=>{
-    setTimeout(()=>{
-        logoSpan.forEach((span, index)=>{
-            setTimeout(()=>{
-                span.classList.add("active");
-            },(index+1)*400);
-        });
+// window.addEventListener("DOMContentLoaded", ()=>{
+//     setTimeout(()=>{
+//         logoSpan.forEach((span, index)=>{
+//             setTimeout(()=>{
+//                 span.classList.add("active");
+//             },(index+1)*400);
+//         });
 
-        setTimeout(()=>{
-            logoSpan.forEach((span, index)=>{
-                setTimeout(()=>{
-                    span.classList.remove("active");
-                    span.classList.add("fade");
-                },(index+1)*50);
-            });
-        }, 4500);
+//         setTimeout(()=>{
+//             logoSpan.forEach((span, index)=>{
+//                 setTimeout(()=>{
+//                     span.classList.remove("active");
+//                     span.classList.add("fade");
+//                 },(index+1)*50);
+//             });
+//         }, 4500);
         
-        setTimeout(()=>{
-            intro.style.top = '-100vh';
-        }, 5300);
+//         setTimeout(()=>{
+//             intro.style.top = '-100vh';
+//         }, 5300);
             
-    });
-});
+//     });
+// });
 
 
 
-const cursor = document.getElementById("cursor");
+// const cursor = document.getElementById("cursor");
 
-window.addEventListener("mousemove", mouseMoveEvent)
+// window.addEventListener("mousemove", mouseMoveEvent)
 
-//update the cursor position based on the mouse position
-function mouseMoveEvent(e) {
-  cursor.style.left = e.clientX  - cursor.offsetWidth / 2 + "px";
-  cursor.style.top = e.clientY - cursor.offsetHeight / 2 + "px";
-  cursor.style.opacity = 1;
-}
+// //update the cursor position based on the mouse position
+// function mouseMoveEvent(e) {
+//   cursor.style.left = e.clientX  - cursor.offsetWidth / 2 + "px";
+//   cursor.style.top = e.clientY - cursor.offsetHeight / 2 + "px";
+//   cursor.style.opacity = 1;
+// }
 
 const scrollBar = document.getElementById("scrollbar");
 
@@ -85,3 +85,71 @@ linkItems.forEach(item => {
 
     item.appendChild(clone);
 });
+
+let title = document.querySelector(".title");
+let counter = document.querySelector(".counter");
+let next = document.getElementById("next");
+let prev = document.getElementById("previous");
+let worksCursor = document.getElementById("works-cursor");
+let image = document.querySelector(".image");
+let tech = document.querySelector(".tech-used");
+let description = document.querySelector(".description");
+
+let myWorks = [
+    {title: "Pokey.dex", technology: "HTML5 CSS3 JavaScript", description: "A simple pokedex application that allows users to search for pokemon by name and get information about the pokemon."},
+    {title: "Portfolio", technology: "HTML5, CSS3, JavaScript, Express, Node.js", description: "My personal portfolio website that houses all my works"},
+    {title: "Web Production 2", technology: "HTML5, CSS3, JavaScript, Express, Node.js", description: "My collection of works for Web Production 2 at Hunter College"},
+    {title: "Web Production 1", technology: "HTML5, CSS3, JavaScript, Photoshop, Illustrator", description: "My collection of works for Web Production 1 at Hunter College"},
+    {title: "Software And Design Analysis 3", technology: "C++", description: "My collection of works for Software And Design Analysis 3 at Hunter College"},
+];
+
+counter.querySelector('p').innerText = "1/5";
+title.querySelector('p').innerText = myWorks[0].title;
+tech.querySelector('p').innerText = myWorks[0].technology;
+
+window.addEventListener('mousemove', (e)=>{
+    worksCursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+});
+
+next.addEventListener("mouseenter", () => {
+    worksCursor.classList.remove('left');
+    worksCursor.classList.add('right');
+});
+next.addEventListener("mouseleave", () => {
+    removeCursor(worksCursor);
+});
+
+prev.addEventListener("mouseenter", () => {
+    worksCursor.classList.remove('right');
+    worksCursor.classList.add('left');
+});
+prev.addEventListener("mouseleave", () => {
+    removeCursor(worksCursor);
+});
+
+function removeCursor(element)
+{
+    element.classList.remove('left');
+    element.classList.remove('right');
+}
+
+next.addEventListener("click", ()=>{
+    let current = parseInt(counter.querySelector('p').innerText.split("/")[0]);
+    let next = current + 1;
+    if(next > myWorks.length){
+        next = 1;
+    }
+    counter.querySelector('p').innerText = `${next}/5`;
+    title.querySelector('p').innerText = myWorks[next-1].title;
+});
+
+prev.addEventListener("click", ()=>{
+    let current = parseInt(counter.querySelector('p').innerText.split("/")[0]);
+    console.log(current);
+    let prev = current - 1;
+    if(prev < 1){
+        prev = myWorks.length;
+    }
+    counter.querySelector('p').innerText = `${prev}/5`;
+    title.querySelector('p').innerText = myWorks[prev-1].title;
+}); 
