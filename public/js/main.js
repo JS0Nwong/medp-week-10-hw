@@ -1,31 +1,31 @@
-// const intro = document.querySelector(".intro");
-// const logo = document.querySelector(".logo-header");
-// const logoSpan = document.querySelectorAll(".logo");
-// const logoReverse = document.querySelectorAll(".logo-reverse");
+const intro = document.querySelector(".intro");
+const logo = document.querySelector(".logo-header");
+const logoSpan = document.querySelectorAll(".logo");
+const logoReverse = document.querySelectorAll(".logo-reverse");
 
-// window.addEventListener("DOMContentLoaded", ()=>{
-//     setTimeout(()=>{
-//         logoSpan.forEach((span, index)=>{
-//             setTimeout(()=>{
-//                 span.classList.add("active");
-//             },(index+1)*400);
-//         });
+window.addEventListener("DOMContentLoaded", ()=>{
+    setTimeout(()=>{
+        logoSpan.forEach((span, index)=>{
+            setTimeout(()=>{
+                span.classList.add("active");
+            },(index+1)*400);
+        });
 
-//         setTimeout(()=>{
-//             logoSpan.forEach((span, index)=>{
-//                 setTimeout(()=>{
-//                     span.classList.remove("active");
-//                     span.classList.add("fade");
-//                 },(index+1)*50);
-//             });
-//         }, 4500);
+        setTimeout(()=>{
+            logoSpan.forEach((span, index)=>{
+                setTimeout(()=>{
+                    span.classList.remove("active");
+                    span.classList.add("fade");
+                },(index+1)*50);
+            });
+        }, 4500);
         
-//         setTimeout(()=>{
-//             intro.style.top = '-100vh';
-//         }, 5300);
+        setTimeout(()=>{
+            intro.style.top = '-100vh';
+        }, 5300);
             
-//     });
-// });
+    });
+});
 
 
 
