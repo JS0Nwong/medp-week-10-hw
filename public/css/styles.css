@@ -373,149 +373,6 @@ span
 }
 
 /*******************************************MY WORKS PAGE*******************************************/
-.works-container
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100vh;
-    width: 100%;
-    user-select: none;
-    scroll-snap-align: start;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-.works-content-wrapper
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-.works-link
-{
-    color: var(--highlight-color);
-    text-decoration: none;
-    mix-blend-mode: difference;
-    font-size: 10rem;
-}
-.works-link:hover
-{
-    color: var(--highlight-color);
-    text-decoration: none;
-}
-.main-content-wrapper
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-.left, .right, .top, .bottom
-{
-    background-color: var(--background-color);
-    position: absolute;
-}
-.left
-{
-    top: 10%;
-    left: 0;
-    height: 85%;
-    width: 3px;
-}
-.right
-{
-    top: 10%;
-    right: -5px;
-    height: 85%;
-    width: 3px;
-}
-.top
-{
-    top: 10%;
-    left: 2px;
-    height: 3px;
-    width: 100%;
-}
-.bottom
-{
-    bottom: 5%;
-    left: 2px;
-    height: 3px;
-    width: 100%;
-}
-.top-side-elem
-{
-    border-bottom: 3px solid var(--background-color);
-}
-.top-element
-{
-    position: absolute;
-    top: 10%;
-    left: 0;
-}
-.side-elem-wrapper
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 100%;
-}
-.side-bar-right
-{
-    background-color: var(--background-color);
-    top: 10%;
-    left: 100%;
-    height: 85%;
-    width: 3px;
-    position: absolute;
-}
-.work-info-name
-{
-    font-size: 5rem;
-    text-align: left;
-}
-.tech-used
-{
-    text-align: left;
-}
-.tech-list
-{
-    list-style-type: none;
-    text-align: left;
-    font-size: 1.4rem;
-    font-family: "Monument", Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;  
-}
-.site-links
-{
-    font-size: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.bottom-side-elem
-{
-    background-color: red;
-    align-items: flex-end;
-}
-.list-container
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 5%;
-    left: 0;  
-}
-
-/***********************/
 main
 {
     position: fixed;
@@ -592,7 +449,7 @@ main
     position: absolute;
     top: 0;
     width: 100%;
-    height: 95%;
+    height: 90%;
 }
 .desc
 {
@@ -647,6 +504,8 @@ main
     transform: translate(-50%, -50%);
     width: 70%;
     padding-bottom: 46.25%;
+    overflow: hidden;
+    z-index: 88;
 }
 .image
 {
@@ -659,6 +518,7 @@ main
     background-position: center;
     transform: scale(1.5);
     transition: background-image 0.5s, transform ease-in-out 0.5s;
+    cursor: none;
 }
 .previous
 {
@@ -689,13 +549,39 @@ main
     font-size: large;
     font-family: "Monument", Arial, Helvetica, sans-serif;
 }
-
+.img-cursor
+{
+    display: none;
+    pointer-events: none;
+}
+.img-cursor.active
+{
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    height: 160px;
+    width: 160px;
+    z-index: 99;
+}
+.img-cursor.active::after
+{
+    content: "View Work";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    font-family: "Monument", Arial, Helvetica, sans-serif;
+}
 .works-cursor
 {
     display: none;
     pointer-events: none;
 }
-.works-cursor .right
+.works-cursor.right
 {
     display: block;
     position: fixed;
@@ -703,12 +589,13 @@ main
     height: 0;
     left: 0;
     top: 0;
-    border-left: 10px solid var(--title-color);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    z-index: 10;
+    border-left: 30px solid var(--background-color);
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    background-color: transparent;
+    z-index: 77;
 }
-.works-cursor .left
+.works-cursor.left
 {
     display: block;
     position: fixed;
@@ -716,10 +603,11 @@ main
     height: 0;
     left: 0;
     top: 0;
-    border-right: 10px solid var(--title-color);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    z-index: 10;
+    border-right: 30px solid var(--background-color);
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    background-color: transparent;
+    z-index: 77;
 }
 /*******************************************ABOUT PAGE*******************************************/
 .about-me-container

@@ -94,21 +94,25 @@ let worksCursor = document.getElementById("works-cursor");
 let image = document.querySelector(".image");
 let tech = document.querySelector(".tech-used");
 let description = document.querySelector(".description");
+let imageWrapper = document.querySelector(".image-wrap");
+let imgCursor = document.getElementById("img-cursor");
 
 let myWorks = [
     {title: "Pokey.dex", technology: "HTML5 CSS3 JavaScript", description: "A simple pokedex application that allows users to search for pokemon by name and get information about the pokemon."},
-    {title: "Portfolio", technology: "HTML5, CSS3, JavaScript, Express, Node.js", description: "My personal portfolio website that houses all my works"},
-    {title: "Web Production 2", technology: "HTML5, CSS3, JavaScript, Express, Node.js", description: "My collection of works for Web Production 2 at Hunter College"},
-    {title: "Web Production 1", technology: "HTML5, CSS3, JavaScript, Photoshop, Illustrator", description: "My collection of works for Web Production 1 at Hunter College"},
+    {title: "Portfolio", technology: "HTML5 CSS3 JavaScript Express Node.js", description: "My personal portfolio website that houses all my works"},
+    {title: "Web Production 2", technology: "HTML5 CSS3 JavaScript Express Node.js", description: "My collection of works for Web Production 2 at Hunter College"},
+    {title: "Web Production 1", technology: "HTML5 CSS3 JavaScript Photoshop Illustrator", description: "My collection of works for Web Production 1 at Hunter College"},
     {title: "Software And Design Analysis 3", technology: "C++", description: "My collection of works for Software And Design Analysis 3 at Hunter College"},
 ];
 
 counter.querySelector('p').innerText = "1/5";
 title.querySelector('p').innerText = myWorks[0].title;
 tech.querySelector('p').innerText = myWorks[0].technology;
+image.style.backgroundImage = `url(./img/1.jpg)`;
 
 window.addEventListener('mousemove', (e)=>{
     worksCursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+    imgCursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
 });
 
 next.addEventListener("mouseenter", () => {
@@ -127,6 +131,15 @@ prev.addEventListener("mouseleave", () => {
     removeCursor(worksCursor);
 });
 
+imageWrapper.addEventListener("mouseenter", () => {
+    removeCursor(worksCursor);
+    imgCursor.classList.add('active');
+});
+imageWrapper.addEventListener("mouseleave", () => {
+    imgCursor.classList.remove('active');
+});
+
+
 function removeCursor(element)
 {
     element.classList.remove('left');
@@ -141,6 +154,8 @@ next.addEventListener("click", ()=>{
     }
     counter.querySelector('p').innerText = `${next}/5`;
     title.querySelector('p').innerText = myWorks[next-1].title;
+    tech.querySelector('p').innerText = myWorks[next-1].technology;
+    image.style.backgroundImage = `url(./img/${next}.jpg)`;
 });
 
 prev.addEventListener("click", ()=>{
@@ -152,4 +167,6 @@ prev.addEventListener("click", ()=>{
     }
     counter.querySelector('p').innerText = `${prev}/5`;
     title.querySelector('p').innerText = myWorks[prev-1].title;
+    tech.querySelector('p').innerText = myWorks[prev-1].technology;
+    image.style.backgroundImage = `url(./img/${prev}.jpg)`;
 }); 
