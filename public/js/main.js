@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const reveal = document.querySelector(".nav-btn");
-    const bottomLinks = document.getElementById("bottom-nav");
+    const bottomLinks = document.querySelectorAll(".link-item");
     reveal.addEventListener("click", () => {
         if(!navReveal.isRevealed())
         {
@@ -58,7 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
             reveal.innerText = "Close";
             reveal.style.color = "#171718";
             //cursor.style.color = "#eeadb5";
-            bottomLinks.style.color = "#eeadb5";
+            bottomLinks.forEach(link => {
+                link.style.color = "#eeadb5";
+            });
         }
         else
         {
@@ -66,7 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
             reveal.setAttribute("data-open", false);
             reveal.innerText = "Open";
             reveal.style.color = "#eeadb5";
-            bottomLinks.style.color = "#171718";
+            bottomLinks.forEach(link => {
+                link.style.color = "#171718";
+            });
         }
     });
 });

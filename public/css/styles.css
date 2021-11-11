@@ -163,9 +163,13 @@ body
 .links
 {
     list-style: none;
+}
+.link-item
+{
     font-size: 3rem;
     color: var(--background-color);
 }
+
 .links > li:not(:last-child)
 {
     margin-bottom: 20px;
