@@ -14,10 +14,10 @@ app.set('port', process.env.PORT || 3000);
 app.use(express.static(__dirname + '/public'));
 
 let listOfWorks = [
-  {title: 'Pokey.Dex', link: 'https://zombo.com', description: 'A website for all your pokemon needs.', image: ''},
-  {title: 'Web Production 2', link: 'https://zombo.com', description: 'A website for all your pokemon needs.', image: ''},
-  {title: 'Web Production 1', link: 'https://zombo.com', description: 'A website for all your pokemon needs.', image: ''},
-  {title: 'Software and Design Analysis 3', link: 'https://zombo.com', description: 'A website for all your pokemon needs.', image: ''},
+  {title: 'Pokey.Dex', link: 'https://js0nwong.github.io/medp331/class_6_midterm/index.html', description: 'A website for all your pokemon needs.', image: ''},
+  {title: 'Web Production 2', link: 'https://github.com/JS0Nwong/JS0Nwong.github.io/tree/main/medp331', description: 'All of my work for Web Production 2 at Hunter College', image: ''},
+  {title: 'Web Production 1', link: 'https://github.com/JS0Nwong/JS0Nwong.github.io/tree/main/medp331', description: 'All of my work for Web Production 1 at Hunter College', image: ''},
+  {title: 'Software and Design Analysis 3', link: 'https://github.com/JS0Nwong/JS0Nwong.github.io/tree/main/medp331', description: 'All of my work for Software and Design Analysis 3 at Hunter College', image: ''},
 ] 
 //image: '/img/panda.jpg'
 // if you want to add your work to a partial
