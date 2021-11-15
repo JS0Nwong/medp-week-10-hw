@@ -334,6 +334,7 @@ span
     justify-content: space-around;
     flex-direction: column;
     padding: 2rem;
+    height: 100vh;
 }
 .contact-statement
 {
@@ -646,9 +647,11 @@ main
     z-index: 77;
 }
 /*******************************************ABOUT PAGE*******************************************/
-.about-me-container
+.about
 {
-    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 .about-me
@@ -664,18 +667,28 @@ main
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 .bio-text
 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
     flex-direction: column;
 }
 .about-me-bio
 {
     font-size: 3.8rem;
     font-family: "Monument", Arial, Helvetica, sans-serif;
+}
+/****SERVER GENERATED WORKS PAGE****/
+.works-page
+{
+    background-color: var(--lighter-highlight-color);
+    font-family: "Monument", Arial, Helvetica, sans-serif;
+}
+.works-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
