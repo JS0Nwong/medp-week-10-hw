@@ -26,6 +26,8 @@ body
     background: var(--lighter-highlight-color);
     transition: .2s ease;
     overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 .cursor
 {
@@ -36,7 +38,6 @@ body
     position: fixed;
     display: inline-block;
     mix-blend-mode: difference;
-    z-index: 2;
 }
 .scrollbar
 {
@@ -465,6 +466,31 @@ span
     flex-direction: column;
     overflow: auto;
     --webkit-overflow-scrolling: touch;
+    scroll-snap-align: start;
+}
+.wave
+{
+    animation: wave 2s infinite ease-in-out;
+    display: inline-block;
+    transform-origin: 70% 70%;  
+}
+@keyframes wave {
+    0% { transform: rotate( 0.0deg) }
+    10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+   100% { transform: rotate( 0.0deg) }
+  }
+.scroll
+{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 4rem;
+    font-family: "Monument", Arial, Helvetica, sans-serif;
 }
 .greetings-container
 {
@@ -491,6 +517,27 @@ span
 {
     font-size: 3.8rem;
     font-family: "Monument", Arial, Helvetica, sans-serif;
+}
+.major-minor
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: "Monument", Arial, Helvetica, sans-serif;
+}
+.tech
+{
+    font-size: 2rem;
+    font-family: "Monument", Arial, Helvetica, sans-serif;
+}
+.tech-container
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
 }
 /****SERVER GENERATED WORKS PAGE****/
 .works-page
