@@ -462,12 +462,23 @@ span
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    overflow: auto;
+    --webkit-overflow-scrolling: touch;
+}
+.greetings-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
 }
 .about-me
 {
     font-size: 100px;
     mix-blend-mode: difference;
+    height: 100vh;
 }
 .about-me-category
 {
