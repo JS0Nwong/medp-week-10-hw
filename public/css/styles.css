@@ -20,14 +20,17 @@
     src: url("./Fonts/MonumentExtended-FreeForPersonalUse/MonumentExtended-Regular.otf") format("opentype");
 }
 /****SCROLL BAR AND CURSOR****/
+html
+{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
 body
 {
     font-family: Keira, Arial, Helvetica, sans-serif;
     background: var(--lighter-highlight-color);
     transition: .2s ease;
     overflow-x: hidden;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
 }
 .cursor
 {
@@ -464,15 +467,16 @@ span
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow: auto;
-    --webkit-overflow-scrolling: touch;
-    scroll-snap-align: start;
 }
 .wave
 {
     animation: wave 2s infinite ease-in-out;
     display: inline-block;
     transform-origin: 70% 70%;  
+}
+section
+{
+    scroll-snap-align: start;
 }
 @keyframes wave {
     0% { transform: rotate( 0.0deg) }
