@@ -551,6 +551,11 @@ section
 {
     font-size: 7rem;
 }
+.email
+{
+    display: flex;
+    justify-content: center;
+}
 /****SERVER GENERATED WORKS PAGE****/
 .works-page
 {
