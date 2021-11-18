@@ -543,6 +543,14 @@ section
     flex-direction: column;
     text-align: left;
 }
+.location
+{
+    font-size: 8rem;
+}
+.contact-email
+{
+    font-size: 7rem;
+}
 /****SERVER GENERATED WORKS PAGE****/
 .works-page
 {
